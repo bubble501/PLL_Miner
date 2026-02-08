@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  miner-1:
+    build: .
+    container_name: pol-miner-1
+    restart: unless-stopped
+    volumes:
+      - ./config-agent1.json:/miner/config.json:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["--config", "config.json", "--continuous"]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  miner-2:
+    build: .
+    container_name: pol-miner-2
+    restart: unless-stopped
+    volumes:
+      - ./config-agent2.json:/miner/config.json:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["--config", "config.json", "--continuous"]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  miner-3:
+    build: .
+    container_name: pol-miner-3
+    restart: unless-stopped
+    volumes:
+      - ./config-agent3.json:/miner/config.json:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["--config", "config.json", "--continuous"]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

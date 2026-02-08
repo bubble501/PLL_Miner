@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "/Users/bubble/PLL/miner/miner.py", line 477, in main
+    miner.run(continuous=args.continuous)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bubble/PLL/miner/miner.py", line 295, in run
+    if not self.subscribe():
+           ~~~~~~~~~~~~~~^^
+  File "/Users/bubble/PLL/miner/miner.py", line 143, in subscribe
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "/Users/bubble/PLL/miner/venv/lib/python3.13/site-packages/web3/eth/eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/bubble/PLL/miner/venv/lib/python3.13/site-packages/web3/module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+        method_str, params, error_formatters, null_result_formatters
+    )
+  File "/Users/bubble/PLL/miner/venv/lib/python3.13/site-packages/web3/manager.py", line 233, in request_blocking
+    return self.formatted_response(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        response, params, error_formatters, null_result_formatters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/bubble/PLL/miner/venv/lib/python3.13/site-packages/web3/manager.py", line 199, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        response,
+        ^^^^^^^^^
+    ...<3 lines>...
+        params=params,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/bubble/PLL/miner/venv/lib/python3.13/site-packages/web3/_utils/validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'replacement transaction underpriced'}
+🔑 Loaded account: 0xdB540aEf2E31dD747E7Fc652c794b1f5414BeD00
+✅ Miner initialized for Agent NFT #100
+💰 Payout address: 0xdB540aEf2E31dD747E7Fc652c794b1f5414BeD00
+
+============================================================
+🚀 POL Miner Starting
+============================================================
+
+💰 Balances:
+   ETH: 0.010000
+   USDC: 1000.000000
+   POL: 0.00
+
+⚠️  Agent is not subscribed
+
+📝 Subscribing for Hour plan
+   Price: 0.009000 USDC
+   Duration: 1.0 hours
+   Approving USDC spending...
+   Waiting for approval tx: 2ed5f3dbef8651ae020577e4badac991c12ac4f45deb37f457a35cbc87495148
+   ✅ Approved
+
+❌ Fatal error: {'code': -32000, 'message': 'replacement transaction underpriced'}

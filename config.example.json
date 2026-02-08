@@ -1,0 +1,20 @@
+{
+  "rpc_url": "https://sepolia.base.org",
+  "private_key": "0xYOUR_PRIVATE_KEY_HERE",
+  "pol_chain_address": "0xAcA4dC2B2f2aBE1de0e9ac2E4408c76c9a86d019",
+  "pol_token_address": "0xC04c1Cf7cd72cc85541337B8980d94473b3F8A65",
+  "usdc_address": "0x23af5625F8f37Bd553E5c3f852F7Be6452aE1E59",
+  "registry_address": "0x408D7B0C9D4C94D46a71Ab2D3bFA80246c255986",
+  "nft_id": 1,
+  "payout_address": "0xYOUR_PAYOUT_ADDRESS",
+  "max_nonce_attempts": 1000000,
+  "check_interval": 5,
+  "auto_subscribe": true,
+  "subscription_plan": 1,
+  "_comments": {
+    "subscription_plan": "0=Hour, 1=Day, 2=Month, 3=Year",
+    "check_interval": "Seconds to wait between mining attempts in continuous mode",
+    "max_nonce_attempts": "Maximum number of nonces to try before giving up",
+    "auto_subscribe": "Automatically renew subscription when it expires"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "rpc_url": "https://sepolia.base.org",
+  "private_key": "0x7dbe0a6e2f6ecbc43413665592657918da4ec77ecf01e87f90f71160bae42f3a",
+  "pol_chain_address": "0x6b6e1A04CBA04630ac320B422b743e6b4400668D",
+  "pol_token_address": "0x0DaF157cCA2017dc03252c98DCD8D896623F246A",
+  "usdc_address": "0xeA484A19784Ad601626907186bc11dE112055025",
+  "registry_address": "0x15f2cf6eAf9cac276C2D23BCeB8280E242FB2901",
+  "nft_id": 100,
+  "payout_address": "0xdB540aEf2E31dD747E7Fc652c794b1f5414BeD00",
+  "max_nonce_attempts": 1000000,
+  "check_interval": 5,
+  "auto_subscribe": true,
+  "subscription_plan": 0
+}
