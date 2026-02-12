@@ -60,13 +60,14 @@ class POLMiner:
         self.payout_address = config.get('payout_address', self.account.address)
         
         # Mining config
-        self.max_nonce_attempts = config.get('max_nonce_attempts', 1000000)
+        self.max_nonce_attempts = config.get('max_nonce_attempts', 10000000)
         self.check_interval = config.get('check_interval', 5)  # seconds between checks
         self.auto_subscribe = config.get('auto_subscribe', True)
         self.subscription_plan = config.get('subscription_plan', 1)  # 0=Hour, 1=Day, 2=Month, 3=Year
         
         print(f"✅ Miner initialized for Agent NFT #{self.nft_id}")
         print(f"💰 Payout address: {self.payout_address}")
+        print(f"⚙️  Max nonce attempts: {self.max_nonce_attempts:,}")
     
     def check_subscription(self) -> Tuple[bool, int]:
         """Check if agent is subscribed and when it expires"""
@@ -446,7 +447,7 @@ Examples:
     parser.add_argument('--usdc', help='USDC contract address')
     parser.add_argument('--registry', help='Agent Registry contract address')
     parser.add_argument('--continuous', action='store_true', help='Mine continuously')
-    parser.add_argument('--max-attempts', type=int, default=1000000, help='Max nonce attempts per block')
+    parser.add_argument('--max-attempts', type=int, help='Max nonce attempts per block')
     
     args = parser.parse_args()
     
@@ -467,8 +468,8 @@ Examples:
         parser.print_help()
         sys.exit(1)
     
-    # Override max attempts if specified
-    if args.max_attempts:
+    # Override max attempts if explicitly specified
+    if args.max_attempts is not None:
         config['max_nonce_attempts'] = args.max_attempts
     
     # Create and run miner
