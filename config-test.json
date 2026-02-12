@@ -5,7 +5,7 @@
   "pol_token_address": "0xef310994523DEeAF4A7A996A1Ff44272c54a531e",
   "usdc_address": "0x94d67FC909ed830209BC78A313b2Ddfc3dE91580",
   "registry_address": "0x8004A818BFB912233c491871b3d84c89A494BD9e",
-  "nft_id": 1,
+  "nft_id": 578,
   "payout_address": "0xdB540aEf2E31dD747E7Fc652c794b1f5414BeD00",
   "max_nonce_attempts": 10000000,
   "check_interval": 5,
